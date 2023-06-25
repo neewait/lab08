@@ -5,7 +5,7 @@
 Клонировал репозиторий от ЛР (лабораторной работы)  №6
 
 ```console
-$ git clone https://github.com/3Artem99/lab06 lab08
+$ git clone https://github.com/neewait/lab06 lab08
 ```
 
 ```console
@@ -21,7 +21,7 @@ remote: Total 162 (delta 75), reused 128 (delta 58), pack-reused 0
 Переключился на репозиторий для ЛР №8
 ```console
 $ git remote remove origin
-$ git remote add origin https://github.com/3Artem99/lab08
+$ git remote add origin https://github.com/neewait/lab08
 ```
 
 Из туториала для [ЛР №7](https://github.com/tp-labs/lab07) создал папку демо и в ней создал файл "main.cpp"
@@ -138,7 +138,7 @@ $ cmake -B build
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/artem99/3Artem99/workspace/projects/lab08/build
+-- Build files have been written to: /home/artem99/neewait/workspace/projects/lab08/build
 ```
 
 ```console
@@ -505,8 +505,8 @@ $ git commit -m "Lab08"
 ```
 ```console
 $ git push origin main
-Username for 'https://github.com': 3Artem99
-Password for 'https://3Artem99@github.com': 
+Username for 'https://github.com': neewait
+Password for 'https://neewait@github.com': 
 Перечисление объектов: 75, готово.
 Подсчет объектов: 100% (75/75), готово.
 При сжатии изменений используется до 4 потоков
@@ -514,6 +514,6 @@ Password for 'https://3Artem99@github.com':
 Запись объектов: 100% (72/72), 50.15 КиБ | 3.58 МиБ/с, готово.
 Всего 72 (изменений 11), повторно использовано 0 (изменений 0), повторно использовано пакетов 0
 remote: Resolving deltas: 100% (11/11), completed with 1 local object.
-To https://github.com/3Artem99/lab06
+To https://github.com/neewait/lab06
    08db504..d53c5a6  main -> main
 ```
