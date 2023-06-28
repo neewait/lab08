@@ -1,9 +1,9 @@
-   name: vsftpd webserver development
-   on:
+name: vsftpd webserver development
+on:
      push:
        branches:
          - main
-   jobs:
+jobs:
      deploy:
        runs-on: ubuntu-latest
        steps:
