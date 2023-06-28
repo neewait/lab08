@@ -504,7 +504,7 @@ $ git commit -m "Lab08"
  </details>
 ```
 ```console
-$ git push origin main
+$ git push origin master
 Username for 'https://github.com': neewait
 Password for 'https://neewait@github.com': 
 Перечисление объектов: 75, готово.
