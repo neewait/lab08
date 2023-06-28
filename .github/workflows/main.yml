@@ -1,5 +1,5 @@
 yaml
-   name: FTP Deployment
+   name: FTP Server Workflow
    on:
      push:
        branches:
