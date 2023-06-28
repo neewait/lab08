@@ -1,4 +1,4 @@
-name: vsftpd webserver development
+name: .github/workflow
 on:
      push:
        branches:
