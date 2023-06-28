@@ -1,0 +1,34 @@
+yaml
+name: FTP Server Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Setup Docker
+      uses: docker/setup-docker@v1
+    - name: Build Docker image
+      run: docker build -t ftpserver .
+    - name: Start Docker container
+      run: docker run -d -p 20:20 -p 21:21 ftpserver
+    - name: Wait for FTP server to start
+      run: sleep 10
+    - name: Retrieve start page
+      run: |
+        echo "USER anonymous" > ftp_commands.txt
+        echo "PASS anonymous" >> ftp_commands.txt
+        echo "GET index.html" >> ftp_commands.txt
+        echo "QUIT" >> ftp_commands.txt
+        cat ftp_commands.txt | ftp -n localhost
+    - name: Create artifact
+      run: mv index.html /github/workspace/start_page.tar
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Start Page
+        path: /github/workspace/start_page.tar
