@@ -1,5 +1,4 @@
-yaml
-   name: dockerfile
+   name: vsftpd webserver development
    on:
      push:
        branches:
