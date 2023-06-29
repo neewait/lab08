@@ -1,4 +1,9 @@
-FROM stilliard/pure-ftpd
-RUN echo "yes" > /etc/pure-ftpd/conf/DontResolve
-RUN echo "yes" > /etc/pure-ftpd/conf/TLS
-CMD /run.sh -l puredb:/etc/pure-ftpd/pureftpd.pdb -E -j -R -P $PUBLICHOST -p 30000:30009
+FROM stilliard/pure-ftpd:latest
+RENV FTP_USER=ftp \
+    FTP_PASS=ftp
+ENV FTP_DIR=/home/ftpusers/$FTP_USER
+RUN mkdir -p $FTP_DIR \
+    && echo "$FTP_USER:$FTP_PASS" | chpasswd \
+    && chown -R ftp:ftp $FTP_DIR
+EXPOSE 21 30000-30009
+CMD /usr/sbin/pure-ftpd -c 50 -C 10 -l puredb:/etc/pure-ftpd/pureftpd.pdb -E -j -R -P $PUBLICHOST -p 30000:30009
