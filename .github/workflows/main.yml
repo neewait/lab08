@@ -33,7 +33,7 @@ jobs:
         
     - name: Get starting page
       run: |
-        sudo curl -4 -o index.html 0.0.0.0:8443
+        sudo curl -4 -o index.html 127.0.0.1
         
     - name: Archive index.html
       uses: actions/upload-artifact@v2
