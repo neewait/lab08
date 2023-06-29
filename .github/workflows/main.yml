@@ -1,9 +1,9 @@
-name: main
-on:
+ name: FTP Deployment
+   on:
      push:
        branches:
          - master
-jobs:
+   jobs:
      deploy:
        runs-on: ubuntu-latest
        steps:
@@ -21,7 +21,7 @@ jobs:
              push: true
              tags: neewait/ftp-server:latest
          - name: Start FTP server in Docker container
-           run: docker run -d -p 21:21 -p 30000-30009:30000-30009 docker/ftp-server:latest
+           run: docker run -d -p 21:21 -p 30000-30009:30000-30009 -e "FTP_USER=ftp" -e "FTP_PASSWORD=ftp" neewait/ftp-server:latest
          - name: Wait for FTP server to start
            run: sleep 10
          - name: Create and upload index.html to FTP server
