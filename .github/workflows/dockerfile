@@ -6,4 +6,4 @@ RUN mkdir -p $FTP_DIR \
     && echo "$FTP_USER:$FTP_PASS" | chpasswd \
     && chown -R ftp:ftp $FTP_DIR
 EXPOSE 21 30000-30009
-CMD /usr/sbin/pure-ftpd -c 50 -C 10 -l puredb:/etc/pure-ftpd/pureftpd.pdb -E -j -R -P $PUBLICHOST -p 30000:30009
+CMD /usr/sbin/pure-ftpd -c 50 -C 10 -l puredb:/etc/pure-ftpd/pureftpd.pdb -E -j -R -P $PUBLICHOST -p 30001:30009
