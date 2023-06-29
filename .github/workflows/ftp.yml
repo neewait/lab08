@@ -28,7 +28,7 @@ jobs:
         
     - name: Run ftp docker container
       run: |
-        docker run -d --name ftpx-server -p 30000:30009 ftp-server
+        docker run -d --name ftpx-server -p 30001:30009 ftp-server
         sleep 10
         
     - name: Get starting page
